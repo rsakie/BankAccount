@@ -10,6 +10,12 @@ namespace BankAccount
     {
         static void Main(string[] args)
         {
+
+            Client bill = new Client("Bill Johnson", "3118 Billy Bridge Ln", "216-376-9806");
+
+            Savings savings = new Savings(1482306325, 5000.00, "Savings Account");
+
+            Checking checking = new Checking (1482306324, 150000.00, "Checking Account");
             //View Client Information
             //View Account Balance
             //Checking Account Balance
@@ -23,11 +29,11 @@ namespace BankAccount
             //Exit
             Console.WriteLine(" Welcome to Low Point Bank\n");
             Console.WriteLine("Please select a menu option below\n");
-            Console.WriteLine("View Account Information");
             Console.WriteLine("1. Check Balance");
             Console.WriteLine("2. Deposit Cash");
             Console.WriteLine("3. Withdraw Cash");
-            Console.WriteLine("4. Exit\n");
+            Console.WriteLine("4. View Account Information");
+            Console.WriteLine("5. Exit\n");
             
 
 
@@ -50,38 +56,37 @@ namespace BankAccount
                 balance = Console.ReadLine();
                 if (balance == "1")
                 {
-                    Checking checkingBalance = new Checking();
-                    Console.WriteLine("Your Checking Account Balance is ");
-                    Console.WriteLine(checkingBalance);
-                    Console.WriteLine("");
+                    Checking checkingBalance = new Checking(1482306324, 150000.00, "Checking");
+                    Console.WriteLine("Your Checking Account Balance is" + checkingBalance);
+                    
+                    //lost on how to retrieve balances
                 }
                 if (balance == "2")
                 {
-                    Savings savingsBalance = new Savings();
-                    Console.WriteLine("Your Savings Account Balance is ");
-                    Console.WriteLine(savingsBalance);
-                    Console.WriteLine("");
+                    Savings savingsBalance = new Savings(1482306325, 5000.00, "Savings");
+                    Console.WriteLine("Your Savings Account Balance is " + savingsBalance);
+                    
+                   
                 }
                 else if (selection == 2)
                 {
                     string deposit;
                     Console.WriteLine("Which Account do you want to deposit cash? \n");
-                    Console.WriteLine("1.  Checking");
-                    Console.WriteLine("2.  Savings");
+                    Console.WriteLine("1. Checking");
+                    Console.WriteLine("2. Savings");
                     Console.WriteLine("Please enter selection: ");
                     deposit = Console.ReadLine();
                     if (deposit == "1")
                     {
                         Console.WriteLine("Enter your deposit amount: \t$");
                         double checkingDeposit = int.Parse(Console.ReadLine());
-                        Checking depositChecking = new Checking();
-
+                        checking.Deposit();
                     }
                     if (deposit == "2")
                     {
                         Console.WriteLine("Enter your deposit amount: \t$");
                         double savingsDeposit = int.Parse(Console.ReadLine());
-                        Savings depositSavings = new Savings();
+                        savings.Deposit();
                     }
 
                     else if (selection == 3)
@@ -104,10 +109,15 @@ namespace BankAccount
                             double savingsWithdraw = int.Parse(Console.ReadLine());
 
                         }
-                        else
+                         else if (selection == 4)
                         {
-                           
+                            Console.WriteLine("Client Information" + bill);
                         }
+                        else if (selection == 5)
+                        {
+                           return;
+                        }
+                                                    
 
 
                     }

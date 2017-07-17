@@ -6,29 +6,50 @@ using System.Threading.Tasks;
 
 namespace BankAccount
 {
-    class Account
+    abstract class Account
     {
         //fields
-        protected int accountNumber = 1482306324;
-        protected double checkingBalance = 150000.00d;
-        protected double savingsBalance = 5000.00d;
+        protected int accountNumber;
+        protected double balance;
+        protected string accountType;
 
         //properties
         public int AccountNumber { get; }
-        public double CheckingBalance { get; }
-        public double SavingsBalance { get; }
+        public double Balance { get; }
+        public string AccountType { get; }
 
         public Account()
         {
 
         }
-        public Account(int accountNumber, double checkingBalance, double savingsBalance)
-        {
-            this.AccountNumber = AccountNumber;
-            this.CheckingBalance = CheckingBalance;
-            this.SavingsBalance = SavingsBalance;
-        }
-    
 
+        //not sure of what im doing exactly
+        public Account(int accountNumber, double balance, string accountType)
+        {
+            this.accountNumber = accountNumber;
+            this.balance = balance;
+            this.accountType = accountType;
+        }
+
+        public virtual string viewBalance(double balance)
+        {
+            return "Account Balance: " + balance;
+        }
+
+
+        public virtual double Withdraw()
+        {
+            double withdrawAmmount = double.Parse(Console.ReadLine());
+            balance -= withdrawAmmount;
+            return withdrawAmmount;
+
+        }
+        public virtual double Deposit()
+        {
+            double depositAmmount = double.Parse(Console.ReadLine());
+            balance += depositAmmount;
+            return depositAmmount;
+
+        }
     }
 }

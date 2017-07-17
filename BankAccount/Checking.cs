@@ -9,7 +9,7 @@ namespace BankAccount
     class Checking : Account
     {
 
-        public static void checking(int accountNumber, double checkingBalance, string accountType)
+        public Checking(int accountNumber, double checkingBalance, string accountType)
         {
             Console.WriteLine(accountNumber);
             Console.WriteLine(checkingBalance);
@@ -17,23 +17,23 @@ namespace BankAccount
         }
         
         ////Methods
-        public static void ViewBalance()
-        {
-            Console.WriteLine();
-        }
+        //public static void
+        //{
+        //    Console.WriteLine();
+        //}
 
-        public static double Deposit()
-        {
-            double depositAmount = double.Parse(Console.ReadLine());
-            return depositAmount;
-        }
+        //public static double Deposit()
+        //{
+        //    double depositAmount = double.Parse(Console.ReadLine());
+        //    return depositAmount;
+        //}
 
-        public static double Withdraw()
-        {
-            double withdrawAmount = double.Parse(Console.ReadLine());
+        //public static double Withdraw()
+        //{
+        //    double withdrawAmount = double.Parse(Console.ReadLine());
 
-            return withdrawAmount;
-        }
+        //    return withdrawAmount;
+        //}
     }
    }
 
