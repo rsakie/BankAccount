@@ -8,17 +8,14 @@ namespace BankAccount
 {
     class Checking : Account
     {
-   
-        public static void checking (int accountNumber, double checkingBalance, string accountType)
-    {
+
+        public static void checking(int accountNumber, double checkingBalance, string accountType)
+        {
             Console.WriteLine(accountNumber);
             Console.WriteLine(checkingBalance);
             Console.WriteLine(accountType);
-    }
-        public Checking()
-        {
-
         }
+        
         ////Methods
         public static void ViewBalance()
         {
@@ -38,4 +35,5 @@ namespace BankAccount
             return withdrawAmount;
         }
     }
-    }
+   }
+
